@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of Dom</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+       .fruits-container li{
+            color: yellowgreen;
+        }
+        #Fruits-title{
+            color: black;
+        }
+        .important-places{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome To My Dom</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio minima officia perferendis, soluta pariatur ratione autem in sit error quibusdam similique voluptatibus, delectus alias commodi sint id voluptates quae provident.</p>
+    </header>
+    <main id="main-container">
+        <section><h1>My Awesome Dom Re Baba</h1>
+            <ul>
+                <li>Jalali Set</li>
+                <li>Shafayat</li>
+                <li>Bonobash</li>
+                <li>DOM RE Baba</li>
+            </ul></section>
+        <section class="fruits-container">
+            <h1 id="Fruits-title" class="some-class random-class blue-bg">Fruits I Like</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Carrot</li>
+            </ul>
+        </section>
+        <section id="places-container" class="large-text">
+            <h1 id="Place-title">Place I like to visit</h1>
+            <ul id="places-list">
+                <li class="important-places">Bandarban</li>
+                <li class="important-places">Sundorban</li>
+                <li class="important-places">Kataban</li>
+                <li class="other-place">Shalbon</li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script src="js/append.js"></script>
+    <script src="./styleinjs.js"></script>
+    <script>
+       const liCollection = document.getElementsByTagName('li');
+    //    console.log(liCollection); 
+    for(const li of liCollection){
+        // console.log(li.innerText);
+    }
+    // option-1: getElementsByTagName
+    const allHeadings = document.getElementsByTagName('h1');
+    for(const h1 of allHeadings){
+        // console.log(h1.innerText);
+    }
+    // option-2: getElementById
+const fruitsTitle = document.getElementById('Fruits-title');
+    fruitsTitle.innerText = 'fruits change by js';
+    // option-3: getElementByClassName
+    const places = document.getElementsByClassName('important-places');
+    for(const place of places){
+        // console.log(place.innerText)
+    }
+    // option-4: querySelector
+    // option-5: querySelectorAll
+    const someLi = document.querySelectorAll('.fruits-container li');
+    // console.log(someLi);
+    for ( const li of someLi){
+        // console.log(li.innerText);
+    }
+    </script>
+</body>
+</html>
